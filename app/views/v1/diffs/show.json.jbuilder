@@ -1,0 +1,1 @@
+json.partial! "v1_diffs/v1_diff", v1_diff: @v1_diff
