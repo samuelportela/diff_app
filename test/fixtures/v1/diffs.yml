@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  left: MyString
-  right: MyString
+  left: "{\"foo\":\"bar\"}"
+  right: "{\"foo\":\"bar\"}"
 
 two:
-  left: MyString
-  right: MyString
+  left: "{\"foo\":\"bar\"}"
+  right: "{\"fooooo\":\"bar\"}"
+
+three:
+  left: "{\"foo\":\"bar\"}"
+  right: "{\"fee\":\"bur\"}"
