@@ -2,7 +2,7 @@ class V1::Diff < ApplicationRecord
   def diff_result
     if left.eql? right then
       'Left and Right are equal'
-    elsif left.size != right.size then
+    elsif (left.nil? || right.nil?) || (left.size != right.size) then
       'Left and Right have different sizes'
     else
       index = 0
