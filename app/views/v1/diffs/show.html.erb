@@ -11,39 +11,8 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <% if @v1_diff.left.eql? @v1_diff.right then %>
-    Left and Right are equal
-  <% elsif @v1_diff.left.size != @v1_diff.right.size then %>
-    Left and Right have different sizes
-  <%
-  else
-    index = 0
-	offset = 0
-	length = 0
-	
-	diffs = Array.new
-	@v1_diff.left.chars.zip(@v1_diff.right.chars).each do |left_char, right_char|
-		if (left_char == right_char && length > 0) then
-			diffs.push(["offset: #{offset}", "length: #{length}"])
-			length = 0
-		end
-		if (left_char != right_char) then
-			if (length == 0) then
-				offset = index
-			end
-			length += 1
-		end
-		index += 1
-	end
-	if (length > 0) then
-		diffs.push(["offset: #{offset}", "length: #{length}"])
-	end
-  %>
-  <%= diffs %>
-  <%
-  end
-  %>
+  <strong>Diff result:</strong>
+  <%= @v1_diff.diff_result %>
 </p>
 
 <%= link_to 'Edit', edit_v1_diff_path(@v1_diff) %> |
