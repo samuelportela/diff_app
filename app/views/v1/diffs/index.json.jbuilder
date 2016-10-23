@@ -1,1 +1,1 @@
-json.array! @v1_diffs, partial: 'v1_diffs/v1_diff', as: :v1_diff
+json.array! @v1_diffs, partial: 'v1/diffs/v1_diff', as: :v1_diff

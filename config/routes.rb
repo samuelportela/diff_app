@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :v1 do
-    resources :diffs, :path => :diff do
+    resources :diffs, :path => :diff, :defaults => { :format => :json } do
       member do
         post :left
         post :right
