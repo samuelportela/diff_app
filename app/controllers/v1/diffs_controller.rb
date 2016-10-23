@@ -1,5 +1,5 @@
 class V1::DiffsController < ApplicationController
-  before_action :set_v1_diff, only: [:show, :edit, :update, :destroy]
+  before_action :set_v1_diff, only: [:show, :edit, :update, :destroy, :left, :right]
 
   # GET /v1/diffs
   # GET /v1/diffs.json
@@ -59,6 +59,20 @@ class V1::DiffsController < ApplicationController
       format.html { redirect_to v1_diffs_url, notice: 'Diff was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  # curl -X POST 'http://localhost:3000/v1/diff/1/left' -H "Content-Type: application/json" --data '{"content":"eyJmb28iOiJiYXIifQ=="}'
+  # this will store {"foo":"bar"}
+  def left
+    @v1_diff.left = Base64.decode64(params[:content])
+    @v1_diff.save
+  end
+  
+  # curl -X POST 'http://localhost:3000/v1/diff/1/right' -H "Content-Type: application/json" --data '{"content":"eyJmZWUiOiJidXIifQ=="}'
+  # this will store {"fee":"bur"}
+  def right
+    @v1_diff.right = Base64.decode64(params[:content])
+    @v1_diff.save
   end
 
   private
