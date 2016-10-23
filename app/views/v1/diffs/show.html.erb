@@ -10,5 +10,14 @@
   <%= @v1_diff.right %>
 </p>
 
+<p>
+  <strong>Status:</strong>
+  <% if @v1_diff.left.eql? @v1_diff.right %>
+    Left and Right are equal
+  <% elsif @v1_diff.left.size != @v1_diff.right.size %>
+    Left and Right have different sizes
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_v1_diff_path(@v1_diff) %> |
 <%= link_to 'Back', v1_diffs_path %>
