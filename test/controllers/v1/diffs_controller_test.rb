@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Integration tests to for the application features.
 class V1::DiffsControllerTest < ActionDispatch::IntegrationTest
   test "should post left content" do
     assert_difference('V1::Diff.count') do

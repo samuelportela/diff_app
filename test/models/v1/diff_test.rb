@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Unit tests for the logic present on Diff model.
 class V1::DiffTest < ActiveSupport::TestCase
   test "should result in a message saying that left and right were not provided yet" do
     diff = V1::Diff.new

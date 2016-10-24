@@ -1,4 +1,13 @@
+# Represents the Diff model used by the application.
 class V1::Diff < ApplicationRecord
+
+  # Compares left and right contents and returns the result of comparison.
+  #
+  # @return the diff result as a string or array depending on the left and right values.
+  # It will return "Left and Right were not provided yet" if both left and right values were not provided.
+  # It will return "Left and Right are equal" if they have the same values.
+  # It will return "Left and Right have different sizes" if they have different sizes.
+  # It will return an array of offsets and lengths if left and right have the same size but different values.
   def diff_result
     if left.nil? && right.nil? then
       'Left and Right were not provided yet'
