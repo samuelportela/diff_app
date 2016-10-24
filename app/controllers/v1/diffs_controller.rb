@@ -20,6 +20,8 @@ class V1::DiffsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_v1_diff
-      @v1_diff = V1::Diff.find_or_initialize_by(id: params[:id])
+      @v1_diff = V1::Diff.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      @v1_diff = V1::Diff.new(id: params[:id])
     end
 end

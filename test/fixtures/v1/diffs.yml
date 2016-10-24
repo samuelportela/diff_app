@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  left: "{\"foo\":\"bar\"}"
-  right: "{\"foo\":\"bar\"}"
-
-two:
-  left: "{\"foo\":\"bar\"}"
-  right: "{\"fooooo\":\"bar\"}"
-
-three:
-  left: "{\"foo\":\"bar\"}"
-  right: "{\"fee\":\"bur\"}"
+# one:
+#   left: "{\"foo\":\"bar\"}"
+#   right: "{\"foo\":\"bar\"}"
+#
+# two:
+#   left: "{\"foo\":\"bar\"}"
+#   right: "{\"fooooo\":\"bar\"}"
+#
+# three:
+#   left: "{\"foo\":\"bar\"}"
+#   right: "{\"fee\":\"bur\"}"
